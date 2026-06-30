@@ -2,7 +2,7 @@
 
 ![Capital Press](https://i.ibb.co/yc27pt3m/captital-press.png)
 
-Capital Press is a modern news web app built with vanilla HTML, CSS, and JavaScript. It brings together live headlines from NewsDataHub and presents them in a clean newspaper style experience with category browsing, search, bookmarks, and article detail pages.
+Capital Press is a modern news web app built with vanilla HTML, CSS, and JavaScript. It brings together live headlines from NewsAPI.org and presents them in a clean newspaper style experience with category browsing, search, bookmarks, and article detail pages.
 
 Live website: https://capital-press.vercel.app
 
@@ -22,7 +22,7 @@ Live website: https://capital-press.vercel.app
 2. CSS for styling, layout, animations, and responsive behavior
 3. Vanilla JavaScript modules for API calls, UI components, and page logic
 4. Vercel serverless function in `api/news.js` as a secure API proxy
-5. NewsDataHub as the upstream news provider
+5. NewsAPI.org as the upstream news provider
 
 ## Project structure
 
@@ -44,7 +44,7 @@ Live website: https://capital-press.vercel.app
 ## Local setup
 
 1. Clone the repository
-2. Create an environment variable named `NEWSDATAHUB_API_KEY`
+2. Create an environment variable named `NEWS_API_KEY` with your NewsAPI.org key
 3. Run the project with Vercel so the `/api/news` endpoint is available
 4. Open the local URL in your browser
 
@@ -57,7 +57,7 @@ vercel dev
 
 ## Notes about the data flow
 
-1. Browser code calls `/api/news` instead of calling NewsDataHub directly
+1. Browser code calls `/api/news` instead of calling NewsAPI.org directly
 2. The serverless function adds the secret key from environment variables
 3. Article cards are cached in `sessionStorage` for fast navigation to the detail page
 4. Bookmarks and theme preference are stored in `localStorage`
